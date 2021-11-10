@@ -95,6 +95,35 @@
         chart.draw(data, options);
       }
     </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Type', 'Protein', 'Fruit', 'Vegtables', 'Grains', 'Dairy', 'Average'],
+          ['High Protein Diet',  1865,      838,         1222,             898,           350,      914.6],
+          ['Low Grain Diet',  335,      520,        899,             668,          108,      442],
+          ['No Dairy Diet',  957,      667,        687,             607,           60,      650],
+          ['High Protein and High Grain',  239,      1410,        515,             668,           1215,      809.4],
+          ['Low Protien and Low Grain',  136,      291,         529,             126,          466,      339.6]
+        ]);
+
+        var options = {
+          title : 'Impact of Food Groups on Overall Health',
+          vAxis: {title: 'Positive Impact'},
+          hAxis: {title: 'Food Group'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
   </head>
 
   <body>
@@ -108,5 +137,101 @@
     </div>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
+    <h2>Enter your average daily intake:</h2>
+<h4>Please press enter when completed with each field.</h4>
+
+<p>Protein:</p>
+
+<input id="myInput" value="Enter Here">
+<button id="myBtn" onclick="javascript:alert('Animal-based foods (meat, poultry, fish, eggs, and dairy foods) tend to be good sources of complete protein along with plant-based foods (nuts and seeds).')">Done</button>
+
+<script>
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+</script>
+
+       
+<br> <br/>
+
+<p>Grains:</p>
+
+<input id="myInput" value="Enter Here">
+<button id="myBtn" onclick="javascript:alert('Having grains made from wheat, rice, oats, cornmeal, barley, or another cereal grain are good sources of grain products.')">Done</button>
+
+<script>
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+</script>
+
+<br> <br/>
+       
+<p>Fruits:</p>
+
+<input id="myInput" value="Enter Here">
+<button id="myBtn" onclick="javascript:alert('Should consumer two servings of fruit per day as there is a high surgar intake.')">Done</button>
+
+<script>
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+</script>
+
+
+<br> <br/>
+
+
+<p>Vegtables:</p>
+
+<input id="myInput" value="Enter Here">
+<button id="myBtn" onclick="javascript:alert('Having two to three cups of vegtables per day is a healthy eatting pattern.')">Done</button>
+
+<script>
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+</script>
+
+<br> <br/>
+
+<p>Dairy:</p>
+
+<input id="myInput" value="Enter Here">
+<button id="myBtn" onclick="javascript:alert('Most people should consume two to three servings of dairy products each day.')">Done</button>
+
+<script>
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+</script>
+
+<br> <br/>
+
+<br> <br/>
+<br> <br/>
+
+<div id="chart_div" style="width: 400px; height: 100px;"></div>
+
   </body>
 </html>
