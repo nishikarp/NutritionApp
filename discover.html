@@ -1,5 +1,6 @@
 <html>
   <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     body {
@@ -35,33 +36,24 @@
     }
 
     div.content {
-      margin-right: 200px;
+      margin-left: 200px;
       padding: 1px 16px;
       height: 1000px;
     }
 
-    @media screen and (max-width: 700px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-      }
-      .sidebar a {float: right;}
-      div.content {margin-right: 0;}
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
     }
-
-    @media screen and (max-width: 400px) {
-      .sidebar a {
-        text-align: center;
-        float: none;
-      }
-    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
     </style>
     <body>
         <!-- The sidebar -->
         <div class="sidebar">
-          <a class="active" href="#home">Home</a>
-          <a href="discover.html">Discover</a>
+          <a href="barchart.html">Home</a>
+          <a class="active" href="discover.html">Discover</a>
           <a href="profile.html">Profile</a>
           <a href="resources.html">Resources</a>
           <a href="connect.html">Connect</a>
